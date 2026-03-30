@@ -1,0 +1,217 @@
+{% extends "glowify/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<div class="offers-hero">
+
+    <div class="offers-slider">
+
+        <div class="offers-slide active">
+            <img src="{% static 'glowify/images/offer1.png' %}">
+        </div>
+
+        <div class="offers-slide">
+            <img src="{% static 'glowify/images/offer2.png' %}">
+        </div>
+
+    </div>
+
+    <button class="offers-prev">&#10094;</button>
+    <button class="offers-next">&#10095;</button>
+
+</div>
+
+
+
+
+<div class="offer-products">
+
+<h2>Buy 1 Get 1 Free</h2>
+
+<div class="offer-grid">
+
+<!-- product 1 -->
+<div class="offer-card">
+
+<div class="offer-img">
+<img src="{% static 'glowify/images/product1.png' %}">
+</div>
+
+<h3>Vitamin C + SPF Duo</h3>
+<p>Daily Protection Bundle</p>
+
+<div class="price">
+<span class="new">₹350</span>
+<span class="old">₹500</span>
+</div>
+
+<button class="offer-btn">Add to Cart</button>
+
+</div>
+
+
+<!-- product 2 -->
+<div class="offer-card">
+
+<div class="offer-img">
+<img src="{% static 'glowify/images/product2.png' %}">
+</div>
+
+<h3>Cleaning Oil + Palm Set</h3>
+<p>Double Cleanse Method</p>
+
+<div class="price">
+<span class="new">₹350</span>
+<span class="old">₹500</span>
+</div>
+
+<button class="offer-btn">Add to Cart</button>
+
+</div>
+
+
+<!-- product 3 -->
+<div class="offer-card">
+
+<div class="offer-img">
+<img src="{% static 'glowify/images/product3.png' %}">
+</div>
+
+<h3>Hyaluronic Acid + Mist</h3>
+<p>Hydration Powerhouse</p>
+
+<div class="price">
+<span class="new">₹350</span>
+<span class="old">₹500</span>
+</div>
+
+<button class="offer-btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="exclusive-offer">
+
+<div class="exclusive-container">
+
+<div class="exclusive-image">
+<img src="{% static 'glowify/images/exe.png' %}">
+</div>
+
+<div class="exclusive-text">
+
+<h2>Exclusive Kit: The Midnight Repair Set</h2>
+
+<p>
+A curated collection of our most powerful overnight treatments.
+Include a full size Retinol Serum, Silk eye mask, and deep
+hydration night cream.
+</p>
+
+<div class="exclusive-price">
+
+<span class="new-price">₹350</span>
+<span class="old-price">₹500</span>
+
+<span class="save">Save 35 %</span>
+
+</div>
+
+<button class="claim-btn">Claim This Offer</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<section class="offer-products">
+   <!-- Buy 1 Get 1 Free cards -->
+</section>
+
+<section class="exclusive-offer">
+   <!-- Exclusive kit section -->
+</section>
+
+<section class="newsletter">
+   <h2>Join The Inner Circle</h2>
+   <p>Sign up to receive early access to new launches, exclusive offers and skincare tips.</p>
+
+   <div class="newsletter-form">
+      <input type="email" placeholder="Enter Your Email">
+      <button>Register</button>
+   </div>
+</section>
+
+    
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+let slides = document.querySelectorAll(".offers-slide");
+
+let index = 0;
+
+function autoSlide(){
+
+slides[index].classList.remove("active");
+
+index++;
+
+if(index >= slides.length){
+clearInterval(timer);
+index = slides.length-1;
+}
+
+slides[index].classList.add("active");
+
+}
+
+let timer = setInterval(autoSlide,3000);
+
+
+document.querySelector(".offers-next").onclick = () => {
+
+if(index < slides.length-1){
+
+slides[index].classList.remove("active");
+
+index++;
+
+slides[index].classList.add("active");
+
+}
+
+}
+
+document.querySelector(".offers-prev").onclick = () => {
+
+if(index > 0){
+
+slides[index].classList.remove("active");
+
+index--;
+
+slides[index].classList.add("active");
+
+}
+
+}
+
+</script>
+{% endblock %}

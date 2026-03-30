@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glowify</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="{% static 'glowify/css/style.css' %}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- NAVBAR START -->
+<nav class="navbar">
+
+<div class="nav-container">
+
+<!-- Logo -->
+
+
+
+
+<a href="{% url 'home' %}" class="logo">
+<img src="{% static 'glowify/images/logo.png' %}" alt="Glowify Logo">
+</a>
+<!-- Search -->
+<div class="search-box">
+<i class="fa fa-search"></i>
+<input type="text" placeholder="Search skincare...">
+</div>
+
+<!-- Menu -->
+<ul class="nav-menu">
+
+<li><a href="/">Home</a></li>
+
+<li class="dropdown">
+
+<a href="#" onclick="toggleDropdown(event)">
+Shop
+</a>
+
+
+<ul class="dropdown-menu" id="shopDropdown">
+
+<li><a href="/category/1/">Lipsticks</a></li>
+<li><a href="/category/5/">Fragrance</a></li>
+<li><a href="/category/6/">Hair Care</a></li>
+<li><a href="/category/3/">Eye Makeup </a></li>
+<li><a href="/category/7/">Nails</a></li>
+<li><a href="/category/4/">Skincare</a></li>
+
+</ul>
+
+</li>
+<li><a href="/offers/">Offers</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/contact/">Contact</a></li>
+
+
+</ul>
+<!-- Icons -->
+<div class="nav-icons">
+
+<div class="icon-circle">
+
+<a href="{% url 'cart' %}" class="cart-icon">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span class="cart-badge">
+{{ cart_count }}
+</span>
+
+</a>
+</div>
+
+<div class="icon-circle heart">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="icon-circle">
+<a href="{% url 'login' %}">
+<i class="fa-regular fa-user"></i>
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- NAVBAR END -->
+
+{% block content %}
+{% endblock %}
+
+<footer class="footer">
+
+<div class="footer-wave"></div>
+
+<div class="footer-container">
+
+<div class="footer-col">
+
+<div class="footer-logo">
+
+<img src="{% static 'glowify/images/logo.png' %}" alt="Glowify Logo">
+</div>
+
+<p class="address">
+3rd Floor, Valasaravakam,<br>
+Chennai - 600800
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="#">Shop</a></li>
+<li><a href="#">New Arrivals</a></li>
+<li><a href="#">Offers</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Support</h3>
+
+<ul>
+
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Privacy Policy</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Social Media</h3>
+
+<div class="social-icons">
+
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+
+
+
+<!-- AOS Animation -->
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init();
+AOS.init({
+duration:1200
+});
+
+
+
+
+
+
+</script>
+
+<script src="{% static 'glowify/js/script.js' %}"></script>
+
+
+
+
+    {% block scripts %}{% endblock %}
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(question => {
+
+question.addEventListener("click", () => {
+
+let item = question.parentElement;
+
+item.classList.toggle("active");
+
+});
+
+});
+
+
+
+
+function redirectLogin(){
+window.location.href = "/login/";
+}
+
+
+
+
+
+
+// PASSWORD SHOW HIDE
+
+function togglePassword(){
+
+let pass=document.getElementById("password");
+
+if(pass.type==="password"){
+pass.type="text";
+}
+else{
+pass.type="password";
+}
+
+}
+
+
+// LOGIN SUCCESS POPUP
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Login Successful ✅");
+
+});
+
+</script>
+
+
+</body>
+</html>
+

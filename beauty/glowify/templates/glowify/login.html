@@ -1,0 +1,79 @@
+{% extends 'glowify/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'glowify/css/login.css' %}">
+
+<section class="login-page">
+
+<div class="login-container">
+
+<!-- LEFT IMAGE -->
+<div class="login-left">
+<img src="{% static 'glowify/images/login.png' %}" alt="">
+</div>
+
+
+<!-- RIGHT FORM -->
+<div class="login-box">
+
+<h2 class="welcome">Welcome Back !</h2>
+
+<h3>Sign in to your Account</h3>
+
+<form id="loginForm">
+
+<label>Email Id</label>
+<input type="email" placeholder="example@gmail.com" required>
+
+<label>Password</label>
+
+<div class="password-box">
+<input type="password" id="password" placeholder="******" required>
+<span onclick="togglePassword()">👁</span>
+</div>
+
+<a href="#" class="forgot">Forget Password?</a>
+
+<div class="remember">
+<input type="checkbox" checked>
+<label>Remember me</label>
+</div>
+
+<button type="submit" class="login-btn">Login</button>
+
+<p class="signup">
+Don't have an account?
+<a href="#">Signup</a>
+</p>
+
+<p class="instant">Instant Login</p>
+
+<div class="social-login">
+
+<button class="google">
+<img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+Continue With google
+</button>
+
+<button class="facebook">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+Continue With facebook
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script src="{% static 'glowify/js/login.js' %}"></script>
+
+{% endblock %}
+

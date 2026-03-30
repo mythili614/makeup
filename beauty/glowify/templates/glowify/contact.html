@@ -1,0 +1,154 @@
+{% extends "glowify/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="contact-hero">
+    <img src="{% static 'glowify/images/contact.png' %}" class="contact-bg">
+
+    <div class="contact-hero-text">
+        <h1>Get In Touch</h1>
+        <p>
+            Wheather you have a question about our formulas or your
+            recent order, our beauty experts are here to help.
+        </p>
+    </div>
+</section>
+
+
+<!-- CONTACT CONTENT -->
+
+<section class="contact-wrapper">
+
+<div class="contact-grid">
+
+<!-- LEFT FORM -->
+
+<div class="contact-form-box">
+
+<h2>Send a Message</h2>
+
+<form>
+
+<div class="form-row">
+<input type="text" placeholder="e.g Narmatha">
+<input type="email" placeholder="nar@gmail.com">
+</div>
+
+<label>Mobile No</label>
+<input type="text" placeholder="Enter mobile number">
+
+<label>Message</label>
+<textarea placeholder="Type here.."></textarea>
+
+<button type="submit" class="send-btn">Send</button>
+
+</form>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="contact-right">
+
+<div class="contact-card">
+
+<h3>Customer Services</h3>
+
+<div class="service-item">
+<span>📧</span>
+<div>
+<b>Email Us</b>
+<p>supportglowify@gmail.com</p>
+</div>
+</div>
+
+<div class="service-item">
+<span>📞</span>
+<div>
+<b>Call Us</b>
+<p>+91-1234567890</p>
+<p>+91-1234567890</p>
+</div>
+</div>
+
+</div>
+
+
+<div class="contact-small-card" onclick="redirectLogin()">
+Track Your Order
+<span>➜</span>
+</div>
+
+<div class="contact-small-card" onclick="redirectLogin()">
+Cancel Order
+<span>➜</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<section class="faq-section">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>1. Is Cream Luxe Finish lipstick long-lasting?</span>
+<span class="faq-arrow">⌄</span>
+</div>
+
+<div class="faq-answer">
+Yes, it lasts up to 6–8 hours with minimal touch-ups.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>2. Is it matte or glossy?</span>
+<span class="faq-arrow">⌄</span>
+</div>
+
+<div class="faq-answer">
+It has a creamy satin finish — not too matte, not too glossy.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>3. Does it dry out lips?</span>
+<span class="faq-arrow">⌄</span>
+</div>
+
+<div class="faq-answer">
+No, it is enriched with moisturizing ingredients to keep lips soft and smooth.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

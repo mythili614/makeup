@@ -1,0 +1,48 @@
+{% extends 'glowify/base.html' %}
+
+{% block content %}
+
+<h2>My Orders</h2>
+
+<table>
+
+<tr>
+<th>Order ID</th>
+<th>Total</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for order in orders %}
+
+<tr>
+
+<td>#{{ order.id }}</td>
+
+<td>₹ {{ order.total_price }}</td>
+
+<td>{{ order.status }}</td>
+
+<td>
+
+{% if order.status != "Cancelled" %}
+
+<a href="{% url 'cancel_order' order.id %}">
+Cancel Order
+</a>
+
+{% else %}
+
+Cancelled
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

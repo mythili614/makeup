@@ -1,0 +1,85 @@
+{% extends 'glowify/base.html' %}
+
+{% block content %}
+
+<h2>Checkout</h2>
+
+<h3>Your Order</h3>
+
+<table border="1" cellpadding="10" cellspacing="0">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Remove</th>
+</tr>
+
+{% for item in items %}
+
+<tr>
+<td>{{ item.product.name }}</td>
+<td>₹ {{ item.product.price }}</td>
+<td>{{ item.quantity }}</td>
+
+<td>
+<a href="{% url 'remove_from_cart' item.product.id %}">
+Delete
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h3>Total: ₹ {{ total }}</h3>
+
+<br>
+
+<button id="rzp-button1" style="
+background:#ff3f6c;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:6px;
+cursor:pointer;">
+Place Order
+</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+var options = {
+
+    "key": "{{ razorpay_key }}",
+    "amount": "{{ payment.amount }}",
+    "currency": "INR",
+    "name": "Glowify",
+    "description": "Order Payment",
+    "order_id": "{{ payment.id }}",
+
+    "handler": function (response){
+
+        window.location.href = "http://127.0.0.1:8000/payment-success/?order_id={{ order.id }}";
+
+    }
+
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById("rzp-button1").onclick = function(e){
+
+    rzp1.open();
+    e.preventDefault();
+
+}
+
+</script>
+
+{% endblock %}

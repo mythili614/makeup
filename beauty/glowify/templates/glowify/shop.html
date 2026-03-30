@@ -1,0 +1,134 @@
+{% extends 'glowify/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="shop-wrapper">
+
+<!-- FILTER -->
+
+<div class="filter-card">
+
+<h3><i class="fa fa-sliders"></i> Filter</h3>
+
+<div class="filter-section">
+
+<div class="filter-title" onclick="toggleFilter(this)">
+Brand <i class="fa fa-angle-down"></i>
+</div>
+
+<div class="filter-options">
+<label><input type="checkbox"> Glowify</label>
+<label><input type="checkbox"> LuxeAura</label>
+<label><input type="checkbox"> Velveté</label>
+<label><input type="checkbox"> Elan Beauty</label>
+</div>
+
+</div>
+
+
+<div class="filter-section">
+
+<div class="filter-title" onclick="toggleFilter(this)">
+Color <i class="fa fa-angle-down"></i>
+</div>
+
+<div class="filter-options">
+<label><input type="checkbox"> Classic Red</label>
+<label><input type="checkbox"> Cherry Red</label>
+<label><input type="checkbox"> Wine Red</label>
+<label><input type="checkbox"> Baby Pink</label>
+</div>
+
+</div>
+
+
+<div class="filter-section">
+
+<div class="filter-title" onclick="toggleFilter(this)">
+Discount <i class="fa fa-angle-down"></i>
+</div>
+
+<div class="filter-options">
+<label><input type="checkbox"> 10-20%</label>
+<label><input type="checkbox"> 20-50%</label>
+<label><input type="checkbox"> 50% & Above</label>
+</div>
+
+</div>
+
+
+<div class="filter-section">
+
+<div class="filter-title" onclick="toggleFilter(this)">
+Price <i class="fa fa-angle-down"></i>
+</div>
+
+<div class="filter-options">
+<label><input type="checkbox"> ₹500-₹1000</label>
+<label><input type="checkbox"> ₹1000-₹2000</label>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCTS -->
+
+<div class="products-area">
+
+<div class="products-header">
+
+<h3>{{ product.name }}</h3>
+<div class="sort-box">
+
+<button class="sort-btn" onclick="toggleSort()">
+Sort By <i class="fa fa-bars"></i>
+</button>
+
+<div class="sort-dropdown" id="sortMenu">
+
+<div>Recommended</div>
+<div>Top Rated</div>
+<div>Price: Low-High</div>
+<div>Price: High-Low</div>
+<div>Offers</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="product-grid">
+
+{% for product in products %}
+
+<div class="product-card">
+
+<img src="{{ product.image.url }}" alt="">
+
+<h4>{{ product.name }}</h4>
+<p>{{ product.description }}</p>
+<p>⭐ {{ product.rating }}</p>
+
+<p>₹{{ product.price }}</p>
+
+<a href="{% url 'add_to_cart' product.id %}" class="add-cart-btn">
+Add to Cart
+</a>
+</div>
+
+{% empty %}
+
+<p>No products found</p>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

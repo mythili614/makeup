@@ -1,0 +1,591 @@
+{% extends 'glowify/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SLIDER -->
+
+<section class="hero-slider">
+
+<div class="slides">
+
+<div class="slide active">
+<img src="{% static 'glowify/images/hero1.png' %}">
+<div class="hero-content" data-aos="fade-right">
+
+<h1>Beauty Sale</h1>
+
+<h2>Up to <span>50% OFF</span></h2>
+
+<p>Limited Time Offer</p>
+
+<a href="#" class="hero-btn">Shop Now</a>
+
+</div>
+
+<div class="flash">Flash Sale <br> 50% Off</div>
+
+</div>
+
+
+
+<div class="slide">
+<img src="{% static 'glowify/images/hero2.png' %}">
+<div class="hero-content" data-aos="fade-right">
+
+<h1>Glow Essentials</h1>
+
+<h2>Flat <span>40% OFF</span></h2>
+
+<p>Premium Skincare</p>
+
+<a href="#" class="hero-btn">Shop Now</a>
+
+</div>
+
+<div class="flash">Flash Sale <br> 40% Off</div>
+
+</div>
+
+
+
+<div class="slide">
+<img src="{% static 'glowify/images/hero3.png' %}">
+<div class="hero-content" data-aos="fade-right">
+
+<h1>Luxury Makeup</h1>
+
+<h2>Save <span>30%</span></h2>
+
+<p>Beauty Collection</p>
+
+<a href="#" class="hero-btn">Shop Now</a>
+
+</div>
+
+<div class="flash">Flash Sale <br> 30% Off</div>
+
+</div>
+
+
+</div>
+
+
+<!-- arrows -->
+
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+
+</section>
+
+
+
+<!-- Skincare Section -->
+<section class="skincare">
+
+<h2 class="skincare-heading" data-aos="fade-up">
+Where Luxury Meets Skin Science
+</h2>
+
+<div class="skincare-container">
+
+<div class="skincare-images">
+
+<img src="{% static 'glowify/images/skin1.png' %}" class="img-top">
+
+<img src="{% static 'glowify/images/skin2.png' %}" class="img-bottom">
+
+</div>
+
+<div class="skincare-text" data-aos="fade-left">
+
+<p>
+At Glowify, we believe oily skin deserves premium care.
+Our dermatologist-tested formula blends advanced ingredients
+with elegant skincare innovation — giving you confidence without compromise.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="ingredients">
+
+<h2 class="ingredients-heading">
+Powered by Performance Ingredients
+</h2>
+
+<div class="ingredients-wrapper">
+
+<div class="ingredients-track">
+
+<!-- ORIGINAL 4 CARDS -->
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p1.png' %}">
+<div class="ingredient-info">
+<h3>Tea Tree Extract</h3>
+<p>Helps reduce acne and calm irritation.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p2.png' %}">
+<div class="ingredient-info">
+<h3>Hyaluronic Acid</h3>
+<p>Hydrates and plumps skin.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p3.png' %}">
+<div class="ingredient-info">
+<h3>Charcoal Complex</h3>
+<p>Deep cleans pores.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p4.png' %}">
+<div class="ingredient-info">
+<h3>Plant Extract</h3>
+<p>Nourishes and protects skin.</p>
+</div>
+</div>
+
+
+<!-- DUPLICATE SAME 4 AGAIN FOR LOOP -->
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p1.png' %}">
+<div class="ingredient-info">
+<h3>Tea Tree Extract</h3>
+<p>Helps reduce acne and calm irritation.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p2.png' %}">
+<div class="ingredient-info">
+<h3>Hyaluronic Acid</h3>
+<p>Hydrates and plumps skin.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p3.png' %}">
+<div class="ingredient-info">
+<h3>Charcoal Complex</h3>
+<p>Deep cleans pores.</p>
+</div>
+</div>
+
+<div class="ingredient-card">
+<img src="{% static 'glowify/images/p4.png' %}">
+<div class="ingredient-info">
+<h3>Plant Extract</h3>
+<p>Nourishes and protects skin.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="featured-products">
+
+<h2 class="section-heading">Featured Products</h2>
+
+<div class="product-grid">
+
+<!-- CARD 1 -->
+<div class="product-card">
+<span class="tag best">🔥 Best Seller</span>
+<img src="{% static 'glowify/images/1.png' %}">
+<h3>Glow Matte Lipstick – Rose Bliss</h3>
+<p>Ultra-smooth matte finish with 12-hour long wear.</p>
+<p class="rating">⭐ 4.8 (214 Reviews)</p>
+<p class="price">Price: ₹799</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="product-card">
+<span class="tag new">⭐ New</span>
+<img src="{% static 'glowify/images/2.png' %}">
+<h3>Radiant Glow Serum</h3>
+<p>Brightens skin and boosts natural glow.</p>
+<p class="rating">⭐ 4.7 (168 Reviews)</p>
+<p class="price">Price: ₹1,299</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="product-card">
+<span class="tag trend">❤ Trending</span>
+<img src="{% static 'glowify/images/3.png' %}">
+<h3>Velvet Touch Foundation</h3>
+<p>Lightweight coverage with flawless finish.</p>
+<p class="rating">⭐ 4.6 (214 Reviews)</p>
+<p class="price">Price: ₹1,099</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="product-card">
+<img src="{% static 'glowify/images/4.png' %}">
+<h3>Blush & Bloom Cheek Tint</h3>
+<p>Natural rosy tint for fresh everyday look.</p>
+<p class="rating">⭐ 4.9 (97 Reviews)</p>
+<p class="price">Price: ₹699</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+
+<!-- CARD 5 -->
+<div class="product-card">
+<span class="tag hot">✨ Hot Pick</span>
+<img src="{% static 'glowify/images/5.png' %}">
+<h3>Luxe Shine Lip Gloss – Crystal Pink</h3>
+<p>Non-sticky gloss with high-shine finish.</p>
+<p class="rating">⭐ 4.7 (186 Reviews)</p>
+<p class="price">Price: ₹749</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+
+<!-- CARD 6 -->
+<div class="product-card">
+<span class="tag skin">🌿 Skin Loving</span>
+<img src="{% static 'glowify/images/6.png' %}">
+<h3>Hydrating Glow Face Mist</h3>
+<p>Refreshes and hydrates skin.</p>
+<p class="rating">⭐ 4.8 (132 Reviews)</p>
+<p class="price">Price: ₹599</p>
+
+<div class="card-actions">
+<button class="cart-btn">Add to cart</button>
+<div class="heart"><i class="fa-solid fa-heart"></i></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- TOP CATEGORIES -->
+
+<section class="top-categories">
+
+<h2 class="category-title">Top Categories</h2>
+
+<div class="category-container">
+
+<!-- CARD 1 -->
+<div class="category-card">
+
+<div class="flip-box">
+<div class="flip-inner">
+
+<div class="flip-front">
+<img src="{% static 'glowify/images/c1.png' %}">
+</div>
+
+<div class="flip-back">
+<img src="{% static 'glowify/images/c1.png' %}">
+</div>
+
+</div>
+</div>
+
+<h3>Lipsticks</h3>
+<p>Vibrant & Bold Color</p>
+
+<a href="{% url 'shop' %}" class="shop-btn">Shop Now</a>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="category-card">
+
+<div class="flip-box">
+<div class="flip-inner">
+
+<div class="flip-front">
+<img src="{% static 'glowify/images/c2.png' %}">
+</div>
+
+<div class="flip-back">
+<img src="{% static 'glowify/images/c2.png' %}">
+</div>
+
+</div>
+</div>
+
+<h3>Skincare</h3>
+<p>Hydrating essentials</p>
+
+<a href="{% url 'shop' %}" class="shop-btn">Shop Now</a>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="category-card">
+
+<div class="flip-box">
+<div class="flip-inner">
+
+<div class="flip-front">
+<img src="{% static 'glowify/images/c3.png' %}">
+</div>
+
+<div class="flip-back">
+<img src="{% static 'glowify/images/c3.png' %}">
+</div>
+
+</div>
+</div>
+
+<h3>Eye Makeup</h3>
+<p>Shadows & Liners</p>
+
+<a href="{% url 'shop' %}" class="shop-btn">Shop Now</a>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="category-card">
+
+<div class="flip-box">
+<div class="flip-inner">
+
+<div class="flip-front">
+<img src="{% static 'glowify/images/c4.png' %}">
+</div>
+
+<div class="flip-back">
+<img src="{% static 'glowify/images/c4.png' %}">
+</div>
+
+</div>
+</div>
+
+<h3>Hair Care</h3>
+<p>Shampoos & Oils</p>
+
+<a href="{% url 'shop' %}" class="shop-btn">Shop Now</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<div class="why-section">
+
+<h2 class="why-title">Why Glowify</h2>
+
+<div class="why-container">
+
+<div class="why-image">
+
+<img src="{% static 'glowify/images/pink-layer.png' %}" class="pink-layer">
+
+<img src="{% static 'glowify/images/why.png' %}" class="model-img">
+
+</div>
+
+
+<div class="why-features">
+
+<div class="feature active">
+<span class="num">01</span>
+<button>Clean Beauty Promise</button>
+</div>
+
+<div class="feature">
+<span class="num">02</span>
+<button>Proven Results</button>
+</div>
+
+<div class="feature">
+<span class="num">03</span>
+<button>Expert Formulated</button>
+</div>
+
+<div class="feature">
+<span class="num">04</span>
+<button>Sustainable Beauty</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<section class="reviews">
+
+<h2 class="review-title">Happy Customers</h2>
+
+<div class="review-box">
+
+<button class="review-prev">&#10094;</button>
+
+<div class="review-slider">
+
+<!-- SLIDE 1 -->
+
+<div class="review active" data-aos="fade-up">
+
+<img src="{% static 'glowify/images/test1.jpg' %}" class="review-img">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Finally, a premium cream that actually controls my oil without making my skin dry.
+My face stays matte even in humid weather!”
+</p>
+
+<h4>- Priya S., Chennai</h4>
+
+</div>
+
+<!-- SLIDE 2 -->
+
+<div class="review" data-aos="fade-up">
+
+<img src="{% static 'glowify/images/test2.jpg' %}" class="review-img">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Glowify serum made my skin brighter within two weeks.
+Super lightweight and perfect for daily use.”
+</p>
+
+<h4>- Ananya R., Bangalore</h4>
+
+</div>
+
+</div>
+
+<button class="review-next">&#10095;</button>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="inner-circle">
+
+<div class="inner-box">
+
+<h2>Join The Inner Circle</h2>
+
+<p>Sign up to receive early access to new launches, exclusive offers and skincare tips.</p>
+
+<div class="subscribe">
+
+<input type="email" placeholder="Enter Your Email">
+
+<button>Register</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="promo-section">
+
+<div class="promo-bg">
+
+<img src="{% static 'glowify/images/promo1.png' %}" class="promo-model">
+
+<img src="{% static 'glowify/images/promo2.png' %}" class="promo-products">
+
+<div class="sale-tag">
+Flash Sale
+<span>50 %</span>
+Off
+</div>
+
+<h2 class="promo-title">“Glow Confidently every Day”</h2>
+
+<a href="#" class="shop-btn">Shop Now</a>
+
+<div class="bubbles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+{% endblock %}
+

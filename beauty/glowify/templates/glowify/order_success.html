@@ -1,0 +1,21 @@
+{% extends 'glowify/base.html' %}
+
+{% block content %}
+
+<div style="padding:40px">
+
+<h2>Thank you for Your Purchase!</h2>
+
+<h3>Order ID : {{ order.id }}</h3>
+
+<p>Status : {{ order.status }}</p>
+
+<br>
+
+<a href="{% url 'track_order' order.id %}" style="padding:10px 20px;background:#ff2e6a;color:white;text-decoration:none;border-radius:5px;">
+Track Order
+</a>
+
+</div>
+
+{% endblock %}

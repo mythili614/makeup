@@ -1,0 +1,74 @@
+{% extends 'glowify/base.html' %}
+
+{% block content %}
+
+<div class="cart-container">
+
+<h2>Your Cart</h2>
+
+<table class="cart-table">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Remove</th>
+</tr>
+
+{% for item in items %}
+
+<tr>
+
+<td class="cart-product">
+
+<img src="{{ item.product.image.url }}" class="cart-img">
+
+<span>{{ item.product.name }}</span>
+
+</td>
+
+<td>₹ {{ item.product.price }}</td>
+
+<td>
+
+<div class="qty-box">
+
+<a href="{% url 'decrease_qty' item.product.id %}">-</a>
+
+<span>{{ item.quantity }}</span>
+
+<a href="{% url 'increase_qty' item.product.id %}">+</a>
+
+</div>
+
+</td>
+
+<td>
+
+<a href="{% url 'remove_from_cart' item.product.id %}">
+Remove
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h3>Total: ₹ {{ total }}</h3>
+
+<a href="{% url 'checkout' %}" style="
+background:#ff3f6c;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:6px;
+display:inline-block;
+margin-top:10px;">
+Proceed to Checkout
+</a>
+
+</div>
+
+{% endblock %}
