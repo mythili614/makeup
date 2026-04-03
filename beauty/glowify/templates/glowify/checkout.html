@@ -50,6 +50,7 @@ cursor:pointer;">
 Place Order
 </button>
 
+<!-- Razorpay -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
@@ -65,8 +66,13 @@ var options = {
 
     "handler": function (response){
 
-        window.location.href = "http://127.0.0.1:8000/payment-success/?order_id={{ order.id }}";
+        // ✅ SUCCESS REDIRECT (WORKS EVERYWHERE)
+        window.location.href = "/payment-success/";
 
+    },
+
+    "theme": {
+        "color": "#ff3f6c"
     }
 
 };
